@@ -2,6 +2,9 @@
 // import express from 'express';
 import express from 'express';
 
+//引入mySql 工具类
+import db from '../../utils/db'
+
 var app =express()
 
 function send(res, ret){
@@ -31,8 +34,18 @@ app.all('*',(req,res,next)=>{
 
 })
 
-app.get('/ddd',(req,res)=>{
-    send(res,'卧槽!!21222234阿斯顿发3341322 222')
+app.get('/test',(req,res)=>{
+    // console.log(req.query)
+     let data={
+        version:'1.0.0.1'
+     }
+    send(res,data)
 })
 
+app.get('/getNameByUserID',(req,res)=>{
+    db.getNameByUserID(1,(name)=>{
+        console.log(name)
+        res.send('查询成功->'+name)
+    })
 
+})

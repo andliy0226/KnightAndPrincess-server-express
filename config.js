@@ -8,52 +8,35 @@ exports.userServer = function(){
     return {
         CLIENT_PORT : CLIENT_PORT,
         CLIENT_IP : CLIENT_IP,
-        VERSION_NUMBER : "20171202",
+        VERSION_NUMBER : "NaNa",
     }
 
 }
 exports.gameServer = function(){
         return {
-            CLIENT_PORT : "9000",
+            CLIENT_PORT : GAME_PORT,
             CLIENT_IP : CLIENT_IP,
-            VERSION_NUMBER : "20171202",
+            VERSION_NUMBER : "20200214",
         }
     
     }
 
-// export function userServer(){
-//     return {
-//         CLIENT_PORT : CLIENT_PORT,
-//         CLIENT_IP : CLIENT_IP,
-//         VERSION_NUMBER : "NaNa",
-//     }
-
-// }
-
-// //游戏服务器
-// export function gameServer(){
-//         return {
-//             CLIENT_PORT : GAME_PORT,
-//             CLIENT_IP : CLIENT_IP,
-//             VERSION_NUMBER : "20200214",
-//         }
-// }
     
+exports.mysql = function(){
+    return {
+        host : "127.0.0.1",
+        user : "root",
+        password : "aloney00",
+        database : "game_data",
+        port : 3306,
+    }
+}
 
-// export function mysql(){
-//     return {
-//         HOST : "127.0.0.1",
-//         USER : "root",
-//         PASSWORD : "123456",
-//         DBNAME : "a_study_lmsd",
-//         PORT : 3306,
-//     }
-// }
+exports.redis=function(){
+    return {
+        host : "127.0.0.1",
+        port : 6379,
+        db: 0,
+    }
 
-// export function redis(){
-//     return {
-//         host : "127.0.0.1",
-//         port : 6379,
-//         db: 0,
-//     }
-// }
+}
